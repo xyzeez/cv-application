@@ -64,7 +64,7 @@ QuickCV is a user-friendly web application designed to simplify the process of c
 
 ## Building with
 
-![React](https://img.shields.io/badge/react-61DAFB.svg?style=for-the-badge&logo=react&logoColor=white) &nbsp; ![Tailwind](https://img.shields.io/badge/tailwind%20-06B6D4.svg?style=for-the-badge&logo=tailwindcss&logoColor=black) &nbsp;
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) &nbsp; ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) &nbsp;
 
 ## Features
 
