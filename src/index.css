@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .px-sys {
+    @apply px-4 md:px-8 xl:px-12;
+  }
+}
+
+.db {
+  border: 1px solid red;
+}
