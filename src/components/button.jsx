@@ -5,7 +5,7 @@ const Button = ({ type, variant, color, size, Icon, reverse, children }) => {
 
   const sizes = {
     sm: 'px-4 py-2',
-    md: 'px-4.5 py-2.5',
+    md: 'px-4 py-2.5',
     lg: 'px-5 py-3',
   };
 
