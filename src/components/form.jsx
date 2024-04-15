@@ -5,9 +5,8 @@ import Button from './button';
 
 const Form = ({ relativeStyle }) => {
   return (
-    <div className={`${relativeStyle} font-inherit`}>
+    <div className={`${relativeStyle} font-inherit db`}>
       The quick brown fox jumps over the lazy dog.
-      <Button Icon={StarIcon}>Button text</Button>
     </div>
   );
 };

@@ -2,9 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer base {
   .px-sys {
     @apply px-4 md:px-8 xl:px-12;
+  }
+}
+
+@layer components {
+  .book {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    font: 12pt 'Tahoma';
+    transform-origin: 0 0;
+    border: 5px solid green;
+  }
+
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+
+  .page {
+    display: block;
+    max-width: 21cm;
+    min-height: 16cm;
+    margin: 1cm auto;
+    border: 1px #d3d3d3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 5px solid red;
+  }
+
+  .subpage {
+    margin: 1cm;
+    max-width: 19cm;
+    max-height: 27.7cm;
+    outline: 0cm #fafafa solid;
+    border: 5px solid blue;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  @media print {
+    .page {
+      margin: 0;
+      border: initial;
+      border-radius: initial;
+      width: initial;
+      min-height: initial;
+      box-shadow: initial;
+      background: initial;
+      page-break-after: always;
+    }
   }
 }
 
