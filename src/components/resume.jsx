@@ -1,38 +1,37 @@
 import React from 'react';
+import { useState, createRef } from 'react';
+import { observeSize } from '../utils';
+
+const rootWidth = document.getElementById('root').clientWidth;
+const hDerivation = 141.43 / 100;
+const pDerivation = 5.71 / 100;
 
 const Resume = () => {
-  function adjustZoomLevel() {
-    var documentWidth =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
+  const [resumeWidth, setResumeWidth] = useState(rootWidth);
 
-    // 1 cm = 37.795276px;
-    var zoomLevel = documentWidth / (23 * 37.795276);
+  const useRefSize = (ref) => {
+    React.useEffect(() => {
+      if (ref.current) {
+        const { current } = ref;
+        observeSize(current, setResumeWidth);
+      }
+    }, [ref]);
+  };
 
-    // stop zooming when book fits page
-    if (zoomLevel >= 1) return;
-
-    document.querySelector('.book').style.transform =
-      'scale(' + zoomLevel + ')';
-  }
-
-  adjustZoomLevel();
-
-  window.addEventListener('resize', adjustZoomLevel);
+  const resumeRef = createRef();
+  useRefSize(resumeRef);
 
   return (
-    <div class="container-fluid">
-      <div class="book">
-        BOOK
-        <div class="page">
-          PAGE
-          <div class="subpage" id="editor-container">
-            SUBPAGE
-          </div>
-        </div>
-      </div>
-    </div>
+    <section
+      ref={resumeRef}
+      id="resumeID"
+      style={{
+        minHeight: resumeWidth * hDerivation,
+        padding: resumeWidth * pDerivation,
+      }}
+      className={`grid grid-rows-1 grid-cols-1 w-full max-w-[21cm] shadow-resume bg-white`}>
+      <div>contents</div>
+    </section>
   );
 };
 

@@ -6,9 +6,9 @@ import Resume from './resume';
 
 const Preview = ({ relativeStyle }) => {
   return (
-    <section className={`${relativeStyle} db flex flex-col gap-4`}>
-      <div className="db flex flex-row items-end justify-between gap-4">
-        <div className="db w-full">
+    <section className={`${relativeStyle} flex flex-col gap-4`}>
+      <div className="flex flex-row items-end justify-between gap-4">
+        <div className="w-full">
           <p>Lorem ipsum dolor sit amet.</p>
           <div className="w-full bg-gray-200 dark:bg-gray-700">
             <div
@@ -22,7 +22,7 @@ const Preview = ({ relativeStyle }) => {
           Download
         </Button>
       </div>
-      <div className="db">
+      <div>
         <Resume />
       </div>
     </section>

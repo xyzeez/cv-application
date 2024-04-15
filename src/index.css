@@ -8,57 +8,10 @@
   }
 }
 
-@layer components {
-  .book {
-    margin: 0;
-    padding: 0;
-    background-color: #fafafa;
-    font: 12pt 'Tahoma';
-    transform-origin: 0 0;
-    border: 5px solid green;
-  }
-
-  * {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-  }
-
-  .page {
-    display: block;
-    max-width: 21cm;
-    min-height: 16cm;
-    margin: 1cm auto;
-    border: 1px #d3d3d3 solid;
-    border-radius: 5px;
-    background: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    border: 5px solid red;
-  }
-
-  .subpage {
-    margin: 1cm;
-    max-width: 19cm;
-    max-height: 27.7cm;
-    outline: 0cm #fafafa solid;
-    border: 5px solid blue;
-  }
-
-  @page {
-    size: A4;
-    margin: 0;
-  }
-
-  @media print {
-    .page {
-      margin: 0;
-      border: initial;
-      border-radius: initial;
-      width: initial;
-      min-height: initial;
-      box-shadow: initial;
-      background: initial;
-      page-break-after: always;
-    }
+@layer utilities {
+  .shadow-resume {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   }
 }
 
