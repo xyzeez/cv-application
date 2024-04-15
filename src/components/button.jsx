@@ -1,4 +1,13 @@
-const Button = ({ type, variant, color, size, Icon, reverse, children }) => {
+const Button = ({
+  type,
+  variant,
+  color,
+  size,
+  Icon,
+  responsive,
+  reverse,
+  children,
+}) => {
   const generalClasses = `
   ${reverse ? 'flex-row-reverse' : 'flex-row'} 
   rounded-lg shadow-sm inline-flex justify-center items-center font-inter font-medium text-center text-base leading-6 focus:ring-4 dark:focus:ring-primary-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition ease-in-out duration-150`;
@@ -30,10 +39,14 @@ const Button = ({ type, variant, color, size, Icon, reverse, children }) => {
       aria-label={children}>
       {Icon && (
         <Icon
-          className={`text-inherit size-5 
+          className={`text-inherit size-5 ${
+            responsive ? (reverse ? 'max-md:-ml-1.5' : 'max-md:-mr-1.5') : ''
+          }
           ${reverse ? 'ml-2 -mr-1' : '-ml-1 mr-2'}`}></Icon>
       )}
-      <span>{children}</span>
+      <span className={`${Icon && responsive ? 'hidden md:block' : ''}`}>
+        {children}
+      </span>
     </button>
   );
 };
