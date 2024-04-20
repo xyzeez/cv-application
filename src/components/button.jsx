@@ -10,7 +10,13 @@ const Button = ({
 }) => {
   const generalClasses = `
   ${reverse ? 'flex-row-reverse' : 'flex-row'} 
-  rounded-lg shadow-sm inline-flex justify-center items-center font-inter font-medium text-center text-base leading-6 focus:ring-4 dark:focus:ring-primary-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition ease-in-out duration-150`;
+  rounded-lg shadow-sm inline-flex justify-center items-center font-inter font-medium text-center text-base leading-6  transition ease-in-out duration-150`;
+
+  const pryHover =
+    'focus:ring-4  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
+
+  const secHover =
+    'focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100';
 
   const sizes = {
     sm: 'px-4 py-2',
@@ -35,7 +41,9 @@ const Button = ({
     <button
       type={type ? type : 'button'}
       className={`${generalClasses} ${sizes[size ? size : 'md']} 
-      ${variants[variant ? variant : 'pry'][color ? color : 'light']}`}
+      ${variants[variant ? variant : 'pry'][color ? color : 'light']} ${
+        variant === 'sec' ? secHover : pryHover
+      }`}
       aria-label={children}>
       {Icon && (
         <Icon
