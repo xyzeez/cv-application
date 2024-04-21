@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { observeSize } from '../utils';
 
 const rootWidth = document.getElementById('root').clientWidth;
@@ -8,16 +7,15 @@ const pDerivation = 5.71 / 100;
 
 const Resume = () => {
   const [resumeWidth, setResumeWidth] = useState(rootWidth);
+  const resumeDOM = useRef(null);
 
   useEffect(() => {
-    const resumeDOM = document.querySelector('#resumeID');
-
-    observeSize(resumeDOM, setResumeWidth);
+    observeSize(resumeDOM.current, setResumeWidth);
   }, []);
 
   return (
     <section
-      id="resumeID"
+      ref={resumeDOM}
       style={{
         minHeight: resumeWidth * hDerivation,
         padding: resumeWidth * pDerivation,
