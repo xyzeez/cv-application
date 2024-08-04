@@ -1,9 +1,9 @@
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
 // Components
-import Button from './button';
-import Resume from './resume';
-import Progress from './progress';
+import Button from '../components/button';
+import Resume from '../components/resume';
+import Progress from '../components/progress';
 
 const Preview = ({ relativeStyle }) => {
   return (
